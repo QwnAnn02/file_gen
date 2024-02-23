@@ -16,8 +16,6 @@ filebeat_yaml_template = """filebeat.inputs:{% for index, row in data.iterrows()
           value: "{{ row['value'].split(', ')[i] }}"
       {% endfor %}
 
-
-
   response.decode_as: application/json
   response.split:
     target: body.metricValues
